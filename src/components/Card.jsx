@@ -26,7 +26,7 @@ const Card = React.memo(({ index, movieData, isLiked = false  }) => {
 
   const addToList = async () => {
     try {
-      await axios.post("https://webflick-backend.onrender.com/api/user/add", {email,data: movieData});
+      await axios.post("https://webflick-backend-ksp5.onrender.com/api/user/add", {email,data: movieData});
     } catch (error) {
       console.log(error);
     }
