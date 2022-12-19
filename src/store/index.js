@@ -47,12 +47,12 @@ export const fetchDataByGenre = createAsyncThunk("netflix/genre",async({genre,ty
     return getRawData(`${TMDB_BASE_URL}/discover/${type}?api_key=${API_KEY}&with_genres=${genre}`,genres);
 })
 export const getUsersLikedMovies = createAsyncThunk("netflix/getLiked",async(email) => {
-    const {data: { movies }} = await axios.get(`https://webflick-backend.onrender.com/api/user/liked/${email}`);
+    const {data: { movies }} = await axios.get(`https://webflick-backend-ksp5.onrender.com/api/user/liked/${email}`);
     return movies;
 });
   
 export const removeMovieFromLiked = createAsyncThunk("netflix/deleteLiked",async({movieId,email}) => {
-    const {data: { movies }} = await axios.put(`https://webflick-backend.onrender.com/api/user/delete`,{email,movieId});
+    const {data: { movies }} = await axios.put(`https://webflick-backend-ksp5.onrender.com/api/user/delete`,{email,movieId});
       return movies;
 });
 
